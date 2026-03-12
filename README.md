@@ -35,6 +35,7 @@ find /project/datasets -maxdepth 3 | sort
 - `datasets/LineEX/*`
 - `datasets/ExcelChart400K/*`
 - `datasets/UB-PMC_CHART-Info/*`
+- それぞれのデータセットで、どのようなアノテーションが付くかの説明
 
 ## 外部ソース
 

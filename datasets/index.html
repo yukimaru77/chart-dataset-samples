@@ -4,21 +4,43 @@
   <meta charset="utf-8" />
   <title>Chart Dataset Samples</title>
   <style>
-    body { font-family: system-ui, sans-serif; margin: 24px; line-height: 1.5; }
-    h1, h2 { margin-top: 1.4em; }
+    body { font-family: system-ui, sans-serif; margin: 24px; line-height: 1.6; max-width: 1100px; }
+    h1, h2, h3 { margin-top: 1.4em; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
     figure { border: 1px solid #ddd; padding: 12px; margin: 0; border-radius: 10px; background: #fafafa; }
     img { max-width: 100%; height: auto; display: block; margin: 0 auto 8px; }
     code { background: #f1f1f1; padding: 2px 4px; border-radius: 4px; }
     .note { color: #444; font-size: 0.95rem; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 14px 16px; margin: 14px 0 22px; background: #fff; }
+    ul { margin-top: 0.4em; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; background: #f7f7f7; border-radius: 8px; padding: 12px; }
   </style>
 </head>
 <body>
   <h1>Graph / Chart Dataset Samples</h1>
   <p>保存先: <code>/project/datasets</code></p>
+  <p class="note">各データセットについて、見本画像だけでなく「何がアノテーションとして付くのか」も分かるように整理しています。</p>
 
   <h2>LineEX</h2>
   <p class="note">公開リポジトリの <code>sample_input</code> と <code>sample_output</code> から少数サンプルを保存。</p>
+  <div class="card">
+    <h3>アノテーション / 出力として分かるもの</h3>
+    <ul>
+      <li>線系列ごとのデータ点列</li>
+      <li>検出・対応付け後の可視化画像</li>
+      <li>各点は画像座標 <code>(x, y)</code></li>
+    </ul>
+    <div class="mono">pred_data_0.png.json
+{
+  "0.png": [
+    [[99, 580], [99, 594], [221, 562], ...],
+    [[763, 228]],
+    [],
+    [[99, 359], [141, 354], [178, 353], ...]
+  ]
+}</div>
+    <p class="note">上のように、1 枚の画像に対して系列ごとの点列が入っています。</p>
+  </div>
   <div class="grid">
     <figure><img src="LineEX/0.png" alt="LineEX sample 0"><figcaption>LineEX input sample 0</figcaption></figure>
     <figure><img src="LineEX/1.png" alt="LineEX sample 1"><figcaption>LineEX input sample 1</figcaption></figure>
@@ -28,6 +50,16 @@
 
   <h2>ExcelChart400K</h2>
   <p class="note">公式公開先は巨大な配布物（Hugging Face / Drive 上の multi-GB zip）。今回は関連実装 DeepRule / ChartOCR リポジトリに含まれるデモ画像を保存。</p>
+  <div class="card">
+    <h3>公開情報から分かる代表的な注釈</h3>
+    <ul>
+      <li><b>Line</b>: 折れ線のデータ点列 <code>[x1, y1, x2, y2, ...]</code></li>
+      <li><b>Bar</b>: 棒の bounding box</li>
+      <li><b>Pie</b>: 扇形を定義する 3 点 <code>[center_x, center_y, edge1_x, edge1_y, edge2_x, edge2_y]</code></li>
+      <li><b>Cls / components</b>: タイトル、凡例、描画領域などの bbox</li>
+    </ul>
+    <p class="note">今回は本体の巨大 zip までは展開せず、まず関連デモ画像を保存しています。</p>
+  </div>
   <div class="grid">
     <figure><img src="ExcelChart400K/test.png" alt="ExcelChart400K related demo test"><figcaption>DeepRule / ChartOCR demo image: test.png</figcaption></figure>
     <figure><img src="ExcelChart400K/target.png" alt="ExcelChart400K related demo target"><figcaption>DeepRule / ChartOCR demo output: target.png</figcaption></figure>
@@ -36,6 +68,18 @@
 
   <h2>UB-PMC / CHART-Info</h2>
   <p class="note">CHART-Info 公式 sample zip <code>UB_PMC_sample_1.21.zip</code> をダウンロードして展開。</p>
+  <div class="card">
+    <h3>サンプル JSON に含まれる注釈</h3>
+    <ul>
+      <li><b>task1</b>: Chart Classification</li>
+      <li><b>task2</b>: Text Detection and Recognition（OCR テキスト + polygon）</li>
+      <li><b>task3</b>: Text Role Classification（tick label / legend label など）</li>
+      <li><b>task4</b>: Axes Analysis（軸、tick point、plot 領域）</li>
+      <li><b>task5</b>: Legend Analysis（凡例記号 bbox とラベル対応）</li>
+      <li><b>task6</b>: Data Extraction（系列名、値、visual elements）</li>
+    </ul>
+    <p class="note">つまり、チャート種別 → OCR → テキスト役割 → 軸 → 凡例 → 最終データ抽出まで段階的に注釈されています。</p>
+  </div>
   <div class="grid">
     <figure><img src="UB-PMC_CHART-Info/sample/UB_PMC_sample/PMC3104219___1471-2458-11-S4-S6-2.jpg" alt="UB PMC sample 1"><figcaption>PMC3104219 sample + JSON annotation</figcaption></figure>
     <figure><img src="UB-PMC_CHART-Info/sample/UB_PMC_sample/PMC3349504___1471-2458-12-286-3.jpg" alt="UB PMC sample 2"><figcaption>PMC3349504 sample + JSON annotation</figcaption></figure>
