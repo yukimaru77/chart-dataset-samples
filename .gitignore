@@ -1,0 +1,11 @@
+AGENTS.md
+TOOLS.md
+skills
+# temp clones
+tmp_lineex/
+tmp_deeprule/
+
+# duplicate lowercase dataset scratch dirs
+datasets/lineex/
+datasets/excelchart400k/
+datasets/ub_pmc_chartinfo/

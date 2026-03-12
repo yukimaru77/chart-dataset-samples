@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>Chart Dataset Samples</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; line-height: 1.5; }
+    h1, h2 { margin-top: 1.4em; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    figure { border: 1px solid #ddd; padding: 12px; margin: 0; border-radius: 10px; background: #fafafa; }
+    img { max-width: 100%; height: auto; display: block; margin: 0 auto 8px; }
+    code { background: #f1f1f1; padding: 2px 4px; border-radius: 4px; }
+    .note { color: #444; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <h1>Graph / Chart Dataset Samples</h1>
+  <p>保存先: <code>/project/datasets</code></p>
+
+  <h2>LineEX</h2>
+  <p class="note">公開リポジトリの <code>sample_input</code> と <code>sample_output</code> から少数サンプルを保存。</p>
+  <div class="grid">
+    <figure><img src="LineEX/0.png" alt="LineEX sample 0"><figcaption>LineEX input sample 0</figcaption></figure>
+    <figure><img src="LineEX/1.png" alt="LineEX sample 1"><figcaption>LineEX input sample 1</figcaption></figure>
+    <figure><img src="LineEX/mapped_0.png" alt="LineEX mapped 0"><figcaption>LineEX output example mapped_0.png</figcaption></figure>
+    <figure><img src="LineEX/det_0.png" alt="LineEX det 0"><figcaption>LineEX detection example det_0.png</figcaption></figure>
+  </div>
+
+  <h2>ExcelChart400K</h2>
+  <p class="note">公式公開先は巨大な配布物（Hugging Face / Drive 上の multi-GB zip）。今回は関連実装 DeepRule / ChartOCR リポジトリに含まれるデモ画像を保存。</p>
+  <div class="grid">
+    <figure><img src="ExcelChart400K/test.png" alt="ExcelChart400K related demo test"><figcaption>DeepRule / ChartOCR demo image: test.png</figcaption></figure>
+    <figure><img src="ExcelChart400K/target.png" alt="ExcelChart400K related demo target"><figcaption>DeepRule / ChartOCR demo output: target.png</figcaption></figure>
+    <figure><img src="ExcelChart400K/target_draw.png" alt="ExcelChart400K related demo target_draw"><figcaption>DeepRule / ChartOCR demo overlay: target_draw.png</figcaption></figure>
+  </div>
+
+  <h2>UB-PMC / CHART-Info</h2>
+  <p class="note">CHART-Info 公式 sample zip <code>UB_PMC_sample_1.21.zip</code> をダウンロードして展開。</p>
+  <div class="grid">
+    <figure><img src="UB-PMC_CHART-Info/sample/UB_PMC_sample/PMC3104219___1471-2458-11-S4-S6-2.jpg" alt="UB PMC sample 1"><figcaption>PMC3104219 sample + JSON annotation</figcaption></figure>
+    <figure><img src="UB-PMC_CHART-Info/sample/UB_PMC_sample/PMC3349504___1471-2458-12-286-3.jpg" alt="UB PMC sample 2"><figcaption>PMC3349504 sample + JSON annotation</figcaption></figure>
+    <figure><img src="UB-PMC_CHART-Info/sample/UB_PMC_sample/PMC3394371___fgene-03-00129-g004.jpg" alt="UB PMC sample 3"><figcaption>PMC3394371 sample + JSON annotation</figcaption></figure>
+    <figure><img src="UB-PMC_CHART-Info/sample/UB_PMC_sample/PMC3823307___ijerph-10-05221-g006.jpg" alt="UB PMC sample 4"><figcaption>PMC3823307 sample + JSON annotation</figcaption></figure>
+  </div>
+</body>
+</html>
