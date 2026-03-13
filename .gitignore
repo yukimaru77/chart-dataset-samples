@@ -9,3 +9,7 @@ tmp_deeprule/
 datasets/lineex/
 datasets/excelchart400k/
 datasets/ub_pmc_chartinfo/
+
+# local model repos / runtimes
+models/
+model_runtimes/

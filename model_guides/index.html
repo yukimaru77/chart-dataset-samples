@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>Chart model guides</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; line-height: 1.6; max-width: 1100px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #f5f5f5; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Chart model setup guides</h1>
+  <p>Repository-side summary for each model. Detailed markdown files also live under <code>model_guides/</code>.</p>
+  <table>
+    <thead>
+      <tr><th>Model</th><th>Status in this workspace</th><th>Main local path</th><th>Example artifact</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ChartOCR</td><td>Repo cloned; full legacy CUDA stack not executed</td><td><code>/project/models/ChartOCR</code></td><td><code>/project/model_examples/ChartOCR/target_draw.png</code></td></tr>
+      <tr><td>Kato 2022 / chart-synthesizer</td><td>uv runtime created; generation verified</td><td><code>/project/models/Kato2022_chart-synthesizer</code></td><td><code>/project/model_examples/Kato2022/line0.png</code></td></tr>
+      <tr><td>LineEX</td><td>Repo cloned; sample outputs available; full pipeline not executed</td><td><code>/project/models/LineEX</code></td><td><code>/project/model_examples/LineEX/mapped_0.png</code></td></tr>
+      <tr><td>LineFormer</td><td>Repo cloned; checkpoint-dependent; demo images available</td><td><code>/project/models/LineFormer</code></td><td><code>/project/model_examples/LineFormer/sample_result.png</code></td></tr>
+      <tr><td>DePlot</td><td>Local inference verified</td><td><code>/project/models/DePlot</code></td><td><code>/project/model_examples/DePlot/demo_output_pretty.txt</code></td></tr>
+      <tr><td>OneChart</td><td>Repo cloned; setup documented; weights not pulled yet</td><td><code>/project/models/OneChart</code></td><td><code>/project/model_examples/OneChart/append_all.png</code></td></tr>
+      <tr><td>ChartVSR</td><td>Paper tracked only; public code path unavailable at check time</td><td><code>/project/models/ChartVSR</code></td><td>No runnable artifact captured yet</td></tr>
+    </tbody>
+  </table>
+  <p><a href="../index.html">Back to home</a></p>
+</body>
+</html>
